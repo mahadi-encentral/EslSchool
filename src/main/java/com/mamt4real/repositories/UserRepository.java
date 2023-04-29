@@ -49,7 +49,9 @@ public class UserRepository implements CrudOperations<User> {
 
     @Override
     public void delete(User data) {
-
+        entityManager.getTransaction().begin();
+        entityManager.remove(data);
+        entityManager.getTransaction().commit();
     }
 
     public long login(String username, String password) {

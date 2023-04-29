@@ -4,16 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a91aa9c6-20bb-4823-91f1-5eaefe840b04" name="Changes" comment="Implementing handlers">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/CourseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/TeacherRepository.java" afterDir="false" />
+    <list default="true" id="a91aa9c6-20bb-4823-91f1-5eaefe840b04" name="Changes" comment="Final Updates">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/exceptions/RegisteredCoursesExceedLimitException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/exceptions/StudentNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mamt4real/repositories/CourseRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mamt4real/repositories/StudentRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mamt4real/repositories/TeacherRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/drivers/AppDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/drivers/AppDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/drivers/AppDriverHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/drivers/AppDriverHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/CourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/TeacherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/TeacherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -55,13 +63,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/MAHADI/Documents/Java Projects/EslSchool/src/main/java/com/mamt4real"
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/MAHADI/Documents/Java Projects/EslSchool/src/test"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MAHADI\Documents\Java Projects\EslSchool\src\test" />
       <recent name="C:\Users\MAHADI\Documents\Java Projects\EslSchool\src\main\java\com\mamt4real" />
       <recent name="C:\Users\MAHADI\Documents\Java Projects\EslSchool\src\main" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.mamt4real.repositories" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -72,7 +89,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.StudentRepositoryTest.testRegisterCourses">
     <configuration name="AppDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mamt4real.drivers.AppDriver" />
       <module name="EslSchool" />
@@ -86,9 +103,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CourseRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EslSchool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mamt4real.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mamt4real.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.mamt4real.repositories.CourseRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EslSchool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mamt4real.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mamt4real.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.mamt4real.repositories.StudentRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentRepositoryTest.testRegisterCourses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EslSchool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mamt4real.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mamt4real.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.mamt4real.repositories.StudentRepositoryTest" />
+      <option name="METHOD_NAME" value="testRegisterCourses" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeacherRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EslSchool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mamt4real.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mamt4real.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.mamt4real.repositories.TeacherRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StudentRepositoryTest.testRegisterCourses" />
+        <item itemvalue="JUnit.CourseRepositoryTest" />
         <item itemvalue="Application.AppDriver" />
+        <item itemvalue="JUnit.TeacherRepositoryTest" />
+        <item itemvalue="JUnit.StudentRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682724098845</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implementing handlers">
+      <created>1682790741880</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682790741881</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +230,7 @@
     <MESSAGE value="Setting Up the Frontend (Console) Classes" />
     <MESSAGE value="Initialising Models" />
     <MESSAGE value="Implementing handlers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing handlers" />
+    <MESSAGE value="Final Updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Updates" />
   </component>
 </project>

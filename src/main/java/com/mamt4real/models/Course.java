@@ -3,6 +3,7 @@ package com.mamt4real.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,6 +28,7 @@ public class Course {
 
     public Course(String title) {
         this.title = title;
+        this.registeredStudents = new ArrayList<>();
     }
 
     public long getCourseId() {
@@ -40,6 +42,7 @@ public class Course {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public List<Student> getRegisteredStudents() {
         return registeredStudents;
     }

@@ -3,6 +3,7 @@ package com.mamt4real.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,6 +14,7 @@ public class Student {
 
     @Id
     @Column(name = "studentId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long studentId;
 
     @Column(name = "name")
@@ -38,6 +40,7 @@ public class Student {
         this.name = name;
         this.gender = gender;
         this.classId = classId;
+        this.registeredCourses = new ArrayList<>();
     }
 
     public long getStudentId() {
@@ -91,7 +94,7 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
                 ", classId=" + classId +
-                ", registeredCourses=" + registeredCourses +
+                ", registeredCourses=" + registeredCourses.stream().map(Course::getTitle) +
                 ", personalGuide=" + personalGuide.getName() +
                 '}';
     }

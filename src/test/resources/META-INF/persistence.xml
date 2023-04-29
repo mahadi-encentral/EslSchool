@@ -1,21 +1,22 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-    <persistence-unit name="esl_school" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="esl_school_test" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.mamt4real.models.User</class>
-        <class>com.mamt4real.models.Course</class>
-        <class>com.mamt4real.models.Teacher</class>
-
+       <class>com.mamt4real.models.Student</class>
+       <class>com.mamt4real.models.Teacher</class>
+       <class>com.mamt4real.models.Course</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:h2:~/eslschool"/>
+                      value="jdbc:h2:~/esl_test_db"/>
 
             <property name="jakarta.persistence.jdbc.user" value="esl"/>
             <property name="jakarta.persistence.jdbc.password" value=""/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-<!--                        <property name="hibernate.hbm2ddl.auto" value="create"/>-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
         </properties>
     </persistence-unit>
 </persistence>

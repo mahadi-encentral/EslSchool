@@ -51,11 +51,8 @@ public class AppDriver {
 
         int choice = 0;
         while (choice != appMenus.length) {
-
             choice = showMenu(appMenus, in);
-
             if (choice == appMenus.length) {
-                in.close();
                 System.out.println("\nLogout Successfully");
                 LOGGED_USER = null;
             } else {

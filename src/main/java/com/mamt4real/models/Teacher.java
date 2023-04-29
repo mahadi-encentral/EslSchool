@@ -2,7 +2,6 @@ package com.mamt4real.models;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -10,15 +9,12 @@ import java.util.Objects;
 public class Teacher {
 
     @Id
-    @Column(name="teacherId")
+    @Column(name = "teacherId")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long teacherId;
 
     @Column(name = "name", nullable = false)
     private String name;
-
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = Student.class)
-    private List<Student> assignedStudents;
 
     public Teacher() {
     }
@@ -39,20 +35,20 @@ public class Teacher {
         this.name = name;
     }
 
-    public List<Student> getAssignedStudents() {
-        return assignedStudents;
-    }
-
-    public void setAssignedStudents(List<Student> assignedStudents) {
-        this.assignedStudents = assignedStudents;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Teacher teacher = (Teacher) o;
         return teacherId == teacher.teacherId && Objects.equals(name, teacher.name);
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacherId=" + teacherId +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     @Override

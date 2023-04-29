@@ -1,5 +1,9 @@
 package com.mamt4real.repositories;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
+import com.mamt4real.exceptions.RegisteredCoursesExceedLimitException;
+import com.mamt4real.exceptions.StudentNotFoundException;
 import com.mamt4real.interfaces.CrudOperations;
 import com.mamt4real.models.Course;
 import com.mamt4real.models.QStudent;
@@ -8,6 +12,7 @@ import com.querydsl.jpa.impl.JPAQuery;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;
+import java.util.Objects;
 
 public class StudentRepository implements CrudOperations<Student> {
 
@@ -62,7 +67,18 @@ public class StudentRepository implements CrudOperations<Student> {
         withTransaction(() -> entityManager.remove(data));
     }
 
-    public void registerCourses(Student student, List<Course> courses) {
+    public void registerCourses(long studentId, List<Course> courses)
+            throws RegisteredCoursesExceedLimitException, StudentNotFoundException {
+        Student student = getOne(studentId);
+        if (student == null) throw new StudentNotFoundException(studentId);
+        Iterables.removeIf(courses, Objects::isNull);
+        courses.addAll(student.getRegisteredCourses());
+        final var total = ImmutableSet.copyOf(courses).asList();
+        if (total.size() > 7) throw new RegisteredCoursesExceedLimitException();
+        withTransaction(() -> {
+            student.setRegisteredCourses(total);
+            total.forEach(c -> c.getRegisteredStudents().add(student));
+        });
 
     }
 }

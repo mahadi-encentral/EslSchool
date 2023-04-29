@@ -3,6 +3,7 @@ package com.mamt4real.repositories;
 import com.mamt4real.interfaces.CrudOperations;
 import com.mamt4real.models.Teacher;
 import com.mamt4real.models.QTeacher;
+import com.querydsl.core.types.dsl.NumberExpression;
 import com.querydsl.jpa.impl.JPAQuery;
 import jakarta.persistence.EntityManager;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class TeacherRepository implements CrudOperations<Teacher> {
     private final EntityManager entityManager;
     private final JPAQuery<Teacher> query;
-    private final QTeacher Q_COURSE = QTeacher.teacher;
+    private final QTeacher Q_TEACHER = QTeacher.teacher;
 
     public TeacherRepository() {
         this(BaseRepository.getEntityManager());
@@ -36,12 +37,12 @@ public class TeacherRepository implements CrudOperations<Teacher> {
 
     @Override
     public List<Teacher> getAll() {
-        return query.from(Q_COURSE).fetch();
+        return query.from(Q_TEACHER).fetch();
     }
 
     @Override
     public Teacher getOne(long id) {
-        return query.from(Q_COURSE).where(Q_COURSE.teacherId.eq(id)).fetchOne();
+        return query.from(Q_TEACHER).where(Q_TEACHER.teacherId.eq(id)).fetchOne();
     }
 
     @Override
@@ -55,5 +56,10 @@ public class TeacherRepository implements CrudOperations<Teacher> {
     public void delete(Teacher data) {
         withTransaction(()->entityManager.remove(data));
     }
+
+    public Teacher findRandom(){
+        return query.from(Q_TEACHER).orderBy(NumberExpression.random().asc()).fetch().stream().findFirst().get();
+    }
+
 
 }
