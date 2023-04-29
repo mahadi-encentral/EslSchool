@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a91aa9c6-20bb-4823-91f1-5eaefe840b04" name="Changes" comment="Setting Up the Frontend (Console) Classes">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Student.java" afterDir="false" />
+    <list default="true" id="a91aa9c6-20bb-4823-91f1-5eaefe840b04" name="Changes" comment="Implementing handlers">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/repositories/TeacherRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/drivers/AppDriverHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/drivers/AppDriverHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamt4real/models/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +68,8 @@
     <option name="myCommands">
       <command value="mvn clean" />
       <command value="mvn install" />
-      <command value="mvn clean install" />
       <command value="mvn compile" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunManager">
@@ -109,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682723478084</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initialising Models">
+      <created>1682724098845</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682724098845</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +139,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Menu set ups" />
     <MESSAGE value="Setting Up the Frontend (Console) Classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting Up the Frontend (Console) Classes" />
+    <MESSAGE value="Initialising Models" />
+    <MESSAGE value="Implementing handlers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing handlers" />
   </component>
 </project>

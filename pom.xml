@@ -113,7 +113,12 @@
         <!--        End of jackson dependencies-->
 
         <!--    Guava Dependencies    -->
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
+        </dependency>
+        <!-- End of Guava Dependencies -->
     </dependencies>
 
     <build>

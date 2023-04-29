@@ -3,6 +3,7 @@ package com.mamt4real.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -16,6 +17,10 @@ public class Course {
 
     @Column(name = "title", nullable = false, unique = true)
     private String title;
+
+    @ManyToMany(targetEntity = Student.class, fetch = FetchType.LAZY)
+    private List<Student> registeredStudents;
+
 
     public Course() {
     }
@@ -34,6 +39,13 @@ public class Course {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+    public List<Student> getRegisteredStudents() {
+        return registeredStudents;
+    }
+
+    public void setRegisteredStudents(List<Student> registeredStudents) {
+        this.registeredStudents = registeredStudents;
     }
 
     @Override
